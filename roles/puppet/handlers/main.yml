@@ -1,2 +1,12 @@
 ---
 # handlers file for puppet
+- name: Restart do agent
+  service:
+     name: puppet-agent
+     state: restarted
+
+- name: Restart do server
+  service:
+     name: puppetserver
+     state: restarted
+

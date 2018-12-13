@@ -1,0 +1,4 @@
+---
+#handlers file for puppet
+- name: Reinicia o agent
+  service: restarte

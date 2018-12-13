@@ -4,6 +4,8 @@
     name: puppet-agent
     state: present
   when: ansible_os_family == "RedHat"
+  notify:
+  - Restart do agent
 
 - name: Instala o puppet-agenet no debian
   apt:
@@ -11,3 +13,6 @@
     state: present
     update-cache: yes
   when: ansible_os_family == "Debian"
+  notify:
+  - Restart do agent
+
