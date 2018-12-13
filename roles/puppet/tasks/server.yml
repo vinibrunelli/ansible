@@ -1,0 +1,13 @@
+---
+- name: Instala o puppet-agent nos RHEL7
+  yum:
+    name: puppetserver
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Instala o puppet-agenet no debian
+  apt:
+    name: puppetserver
+    state: present
+    update-cache: yes
+  when: ansible_os_family == "Debian"
