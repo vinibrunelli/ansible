@@ -1,0 +1,13 @@
+---
+- name: Instala do apache no Redhat
+  yum:
+    name: httpd
+    state: present
+  when: ansible_distribution == "CentOs"
+
+-name: Instala do apache no debian
+  yum:
+    name: apache2
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
