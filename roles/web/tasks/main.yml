@@ -12,7 +12,7 @@
       name: httpd
       state: restarted
 
-  when: ansible_distribution == "CentOs"
+  when: ansible_distribution == "CentOS"
 
 - block:
 
@@ -25,7 +25,9 @@
     service:           
       name: apache2      
       state: restarted
-  
-
-  when: ansible_distribution == "Ubuntu"
+  when: ansible_distribution == "Debian"
  
+- name: Copia o site
+  template:
+    src: index.html
+    dest: /var/www/html/index.html
